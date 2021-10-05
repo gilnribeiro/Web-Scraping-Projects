@@ -26,8 +26,13 @@ If 503 error comes up you should define a USER-AGENT -> GO settings -> Uncomment
 
 ###################################
 More advanced: rotate user agents
-- install scrapy user-agents
+- install scrapy-user-agents
 Copy paste: the DOWNLOAD MIDDLEWARE part in the scrapy user-agents documentation and past on settings
+
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
+}
 
 Using Proxys:
 - install scrapy-proxy-pool
